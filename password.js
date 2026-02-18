@@ -22,6 +22,8 @@ let copyIcon = document.getElementById("copyIcon");
   let Symbols = "~!@#$%^&*";
    function generatePassword(){
     let generatePassword= " ";
+    let allchars = " ";
+     
   
 
    }
