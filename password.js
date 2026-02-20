@@ -8,39 +8,47 @@ let symbols = document.getElementById("symbols");
 let getbtn = document.getElementById("getbtn");
 let copyIcon = document.getElementById("copyIcon");
 
-  sliderValue.textContent = inputSlider.Value;
-  inputSlider.addEventListener('input',()=> {
-    sliderValue.textContent = inputSlider.Value;
+  SiderValue.textContent = inputSlider.Value;
+  inputSlider.addEventListener("input",()=> {
+    SliderValue.textContent = inputSlider.Value;
   });
   getbtn.addEventListener('click',()=>{
-    passbox.Value = generatePassword();
-  })
-
+  passbox.value = generatePassword();
+  });
 
   let Lowercase ="abcdefghijklmopqrstuvwxyz";
   let Uppercase = "ABCDEFGHIJKLMOPQRSTUVWXYZ";
   let Numbers = "0123456789";
   let Symbols = "~!@#$%^&*";
    function generatePassword(){
-    let generatePassword= " ";
-    let allchars = " ";
-     allchars += lowercase,checked?lowercase:" ";
-     allchars += uppercase,checked?uppercase:" ";
-     allchars += Numbers,checked?allNubers:" ";
-     allchars += Symbols,checked?allchars:" ";
-     if(allchars == " "|| allchars.length == 0){
-      return generatePassword;
+   let generatePassword= "";
+    let allchars = "";
+     if (lowercase.checked) {
+  allchars += Lowercase;
+}
+if (uppercase.checked) {
+  allchars += Uppercase;
+}
+if (numbers.checked) {
+  allchars += Numbers;
+}
+if (symbols.checked) {
+  allchars += Symbols;
+}
+     if(allchars.length === 0){
+      return "";
      }
-     let i =1;
-     while(i<= inputSlider.value){
-      genPassword += allchars.charAt(Math.floor
+    //  let i =1;
+    //  while(i<= inputSlider.value){
+    for(let i=0;i<inputSlider.value;i++){
+          genPassword += allchars.charAt(Math.floor
         (Math.random()*allchars.length));
         i++;
      }
      return genPassword;
    }
    copyIcon.addEventListener('click',()=>{
-    if(passbox.Value !=" "|| passbox.value.length >=1){
+    if(passbox.value.length >0){
       navigator.clipboard.writeText(passbox.value);
       copyIcon.innerText = "Check";
       copyIcon.title = "Password Copied";
