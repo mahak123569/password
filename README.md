@@ -2,7 +2,7 @@
 # 🔐 Password Generator Project
 
 A simple **Password Generator Web Application** built using **HTML, CSS, and JavaScript**.
-This project generates strong, random passwords to improve security and help users create safe login credentials easily.
+This project generates strong, random passwords to improve security and help users create safe login credentials easily .
 
 ---
 
